@@ -1,0 +1,13 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: Create a bucket with a name based on CloudFormation Stack name
+# aws cloudformation create-stack --stack-name s3-bucket-example --template-body file://s3-bucket.yaml
+
+# Resources
+Resources:
+  S3Bucket:
+      Type: AWS::S3::Bucket
+      
+# Outputs
+Outputs:
+  S3Bucket:
+    Value: !GetAtt S3Bucket.Arn
